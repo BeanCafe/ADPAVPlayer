@@ -1,0 +1,830 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F440F2B669F1A89DAB39AB4 /* libPods-ADPPlayerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E682E241C796E8189F1025 /* libPods-ADPPlayerUITests.a */; };
+		B43238CA21C2538800219B25 /* ADPIconProgressIndicatorBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B43238C921C2538800219B25 /* ADPIconProgressIndicatorBaseView.m */; };
+		B43238CD21C2590200219B25 /* ADPBrigntnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = B43238CC21C2590200219B25 /* ADPBrigntnessView.m */; };
+		B43238D021C2590E00219B25 /* ADPVolumeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B43238CF21C2590E00219B25 /* ADPVolumeView.m */; };
+		B4357C1321BE703E00BDA7D6 /* ADPSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B4357C1221BE703E00BDA7D6 /* ADPSlider.m */; };
+		B45B893021BFB7B9005C930F /* UIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B45B892F21BFB7B9005C930F /* UIColor+Utils.m */; };
+		B466095C21B91C8A00354D1F /* ADPAVPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B466095B21B91C8A00354D1F /* ADPAVPlayerView.m */; };
+		B466095F21B9237200354D1F /* ADPPlayControllView.m in Sources */ = {isa = PBXBuildFile; fileRef = B466095E21B9237200354D1F /* ADPPlayControllView.m */; };
+		B466096221B923B100354D1F /* ADPBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B466096121B923B100354D1F /* ADPBaseView.m */; };
+		B4865B5621B63234008BF2DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4865B5521B63234008BF2DD /* AVFoundation.framework */; };
+		B4865B5821B63474008BF2DD /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4865B5721B63474008BF2DD /* AVKit.framework */; };
+		B4865B5E21B67558008BF2DD /* ADPPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4865B5D21B67558008BF2DD /* ADPPlayerViewController.m */; };
+		B4865B6021B67D42008BF2DD /* sao2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B4865B5F21B67D42008BF2DD /* sao2.mp4 */; };
+		B4972FC221BA18AF0066FA8B /* ADPPlayerImagesAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4972FC121BA18AF0066FA8B /* ADPPlayerImagesAssets.xcassets */; };
+		B4972FC521BA196B0066FA8B /* ADPPlayPauseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B4972FC421BA196B0066FA8B /* ADPPlayPauseButton.m */; };
+		B4972FC921BA22650066FA8B /* ADPControllContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4972FC821BA22650066FA8B /* ADPControllContainerView.m */; };
+		B49B80C821B524D400EE7C7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B80C721B524D400EE7C7C /* AppDelegate.m */; };
+		B49B80CB21B524D400EE7C7C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B80CA21B524D400EE7C7C /* ViewController.m */; };
+		B49B80CE21B524D400EE7C7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49B80CC21B524D400EE7C7C /* Main.storyboard */; };
+		B49B80D021B524D700EE7C7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B49B80CF21B524D700EE7C7C /* Assets.xcassets */; };
+		B49B80D321B524D700EE7C7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49B80D121B524D700EE7C7C /* LaunchScreen.storyboard */; };
+		B49B80D621B524D700EE7C7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B80D521B524D700EE7C7C /* main.m */; };
+		B49B80E021B524D700EE7C7C /* ADPPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B80DF21B524D700EE7C7C /* ADPPlayerTests.m */; };
+		B49B80EB21B524D700EE7C7C /* ADPPlayerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B80EA21B524D700EE7C7C /* ADPPlayerUITests.m */; };
+		C9F3842864686045F8C13383 /* libPods-ADPPlayerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0860228A81571F1D303B50 /* libPods-ADPPlayerTests.a */; };
+		F622FB376E267443FA52B72D /* libPods-ADPPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BD782EAF8FD8DBBFB68D1C /* libPods-ADPPlayer.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B49B80DC21B524D700EE7C7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B49B80BB21B524D400EE7C7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B49B80C221B524D400EE7C7C;
+			remoteInfo = ADPPlayer;
+		};
+		B49B80E721B524D700EE7C7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B49B80BB21B524D400EE7C7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B49B80C221B524D400EE7C7C;
+			remoteInfo = ADPPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		17F32C2F0638AB2FCEA45FC8 /* Pods-ADPPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADPPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ADPPlayer/Pods-ADPPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		31885E2BB50AF4AB9A07451C /* Pods-ADPPlayerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADPPlayerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ADPPlayerUITests/Pods-ADPPlayerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		393A39973D1C0EC2E5340733 /* Pods-ADPPlayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADPPlayerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADPPlayerTests/Pods-ADPPlayerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		513A7D044473E5D743C804C6 /* Pods-ADPPlayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADPPlayerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ADPPlayerTests/Pods-ADPPlayerTests.release.xcconfig"; sourceTree = "<group>"; };
+		572758A367395E6BE8E6C1E7 /* Pods-ADPPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADPPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADPPlayer/Pods-ADPPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		95BD782EAF8FD8DBBFB68D1C /* libPods-ADPPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ADPPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B15623D18954FAF5F24E58B8 /* Pods-ADPPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADPPlayerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADPPlayerUITests/Pods-ADPPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B43238C821C2538800219B25 /* ADPIconProgressIndicatorBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPIconProgressIndicatorBaseView.h; sourceTree = "<group>"; };
+		B43238C921C2538800219B25 /* ADPIconProgressIndicatorBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPIconProgressIndicatorBaseView.m; sourceTree = "<group>"; };
+		B43238CB21C2590200219B25 /* ADPBrigntnessView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPBrigntnessView.h; sourceTree = "<group>"; };
+		B43238CC21C2590200219B25 /* ADPBrigntnessView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPBrigntnessView.m; sourceTree = "<group>"; };
+		B43238CE21C2590E00219B25 /* ADPVolumeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPVolumeView.h; sourceTree = "<group>"; };
+		B43238CF21C2590E00219B25 /* ADPVolumeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPVolumeView.m; sourceTree = "<group>"; };
+		B43238D221C25EC800219B25 /* ADPConfigs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPConfigs.h; sourceTree = "<group>"; };
+		B4357C1121BE703E00BDA7D6 /* ADPSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPSlider.h; sourceTree = "<group>"; };
+		B4357C1221BE703E00BDA7D6 /* ADPSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPSlider.m; sourceTree = "<group>"; };
+		B45B892E21BFB7B9005C930F /* UIColor+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utils.h"; sourceTree = "<group>"; };
+		B45B892F21BFB7B9005C930F /* UIColor+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utils.m"; sourceTree = "<group>"; };
+		B466095A21B91C8A00354D1F /* ADPAVPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPAVPlayerView.h; sourceTree = "<group>"; };
+		B466095B21B91C8A00354D1F /* ADPAVPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPAVPlayerView.m; sourceTree = "<group>"; };
+		B466095D21B9237200354D1F /* ADPPlayControllView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPPlayControllView.h; sourceTree = "<group>"; };
+		B466095E21B9237200354D1F /* ADPPlayControllView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPPlayControllView.m; sourceTree = "<group>"; };
+		B466096021B923B100354D1F /* ADPBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPBaseView.h; sourceTree = "<group>"; };
+		B466096121B923B100354D1F /* ADPBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPBaseView.m; sourceTree = "<group>"; };
+		B4865B5521B63234008BF2DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B4865B5721B63474008BF2DD /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		B4865B5C21B67558008BF2DD /* ADPPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPPlayerViewController.h; sourceTree = "<group>"; };
+		B4865B5D21B67558008BF2DD /* ADPPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPPlayerViewController.m; sourceTree = "<group>"; };
+		B4865B5F21B67D42008BF2DD /* sao2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sao2.mp4; sourceTree = "<group>"; };
+		B4972FC121BA18AF0066FA8B /* ADPPlayerImagesAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ADPPlayerImagesAssets.xcassets; sourceTree = "<group>"; };
+		B4972FC321BA196B0066FA8B /* ADPPlayPauseButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPPlayPauseButton.h; sourceTree = "<group>"; };
+		B4972FC421BA196B0066FA8B /* ADPPlayPauseButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPPlayPauseButton.m; sourceTree = "<group>"; };
+		B4972FC721BA22650066FA8B /* ADPControllContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPControllContainerView.h; sourceTree = "<group>"; };
+		B4972FC821BA22650066FA8B /* ADPControllContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPControllContainerView.m; sourceTree = "<group>"; };
+		B49B80C321B524D400EE7C7C /* ADPPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADPPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B49B80C621B524D400EE7C7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B49B80C721B524D400EE7C7C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B49B80C921B524D400EE7C7C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B49B80CA21B524D400EE7C7C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B49B80CD21B524D400EE7C7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B49B80CF21B524D700EE7C7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B49B80D221B524D700EE7C7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B49B80D421B524D700EE7C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B49B80D521B524D700EE7C7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B49B80DB21B524D700EE7C7C /* ADPPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADPPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B49B80DF21B524D700EE7C7C /* ADPPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPPlayerTests.m; sourceTree = "<group>"; };
+		B49B80E121B524D700EE7C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B49B80E621B524D700EE7C7C /* ADPPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADPPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B49B80EA21B524D700EE7C7C /* ADPPlayerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPPlayerUITests.m; sourceTree = "<group>"; };
+		B49B80EC21B524D700EE7C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB0860228A81571F1D303B50 /* libPods-ADPPlayerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ADPPlayerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8E682E241C796E8189F1025 /* libPods-ADPPlayerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ADPPlayerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B49B80C021B524D400EE7C7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4865B5821B63474008BF2DD /* AVKit.framework in Frameworks */,
+				B4865B5621B63234008BF2DD /* AVFoundation.framework in Frameworks */,
+				F622FB376E267443FA52B72D /* libPods-ADPPlayer.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B49B80D821B524D700EE7C7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9F3842864686045F8C13383 /* libPods-ADPPlayerTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B49B80E321B524D700EE7C7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F440F2B669F1A89DAB39AB4 /* libPods-ADPPlayerUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66186A0A9AFBA70765BF6829 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				572758A367395E6BE8E6C1E7 /* Pods-ADPPlayer.debug.xcconfig */,
+				17F32C2F0638AB2FCEA45FC8 /* Pods-ADPPlayer.release.xcconfig */,
+				393A39973D1C0EC2E5340733 /* Pods-ADPPlayerTests.debug.xcconfig */,
+				513A7D044473E5D743C804C6 /* Pods-ADPPlayerTests.release.xcconfig */,
+				B15623D18954FAF5F24E58B8 /* Pods-ADPPlayerUITests.debug.xcconfig */,
+				31885E2BB50AF4AB9A07451C /* Pods-ADPPlayerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B43238C621C2536A00219B25 /* 音量亮度 */ = {
+			isa = PBXGroup;
+			children = (
+				B43238C721C2538000219B25 /* Base */,
+				B43238CB21C2590200219B25 /* ADPBrigntnessView.h */,
+				B43238CC21C2590200219B25 /* ADPBrigntnessView.m */,
+				B43238CE21C2590E00219B25 /* ADPVolumeView.h */,
+				B43238CF21C2590E00219B25 /* ADPVolumeView.m */,
+			);
+			path = "音量亮度";
+			sourceTree = "<group>";
+		};
+		B43238C721C2538000219B25 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B43238C821C2538800219B25 /* ADPIconProgressIndicatorBaseView.h */,
+				B43238C921C2538800219B25 /* ADPIconProgressIndicatorBaseView.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		B454557621B5278300602F00 /* ADPAVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				B4972FC621BA221B0066FA8B /* ADPPlayControllView */,
+				B454557721B5279700602F00 /* Base */,
+				B4972FC121BA18AF0066FA8B /* ADPPlayerImagesAssets.xcassets */,
+			);
+			path = ADPAVPlayer;
+			sourceTree = "<group>";
+		};
+		B454557721B5279700602F00 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B45B892D21BFB78E005C930F /* Extend */,
+				B4865B5C21B67558008BF2DD /* ADPPlayerViewController.h */,
+				B4865B5D21B67558008BF2DD /* ADPPlayerViewController.m */,
+				B466095A21B91C8A00354D1F /* ADPAVPlayerView.h */,
+				B466095B21B91C8A00354D1F /* ADPAVPlayerView.m */,
+				B466096021B923B100354D1F /* ADPBaseView.h */,
+				B466096121B923B100354D1F /* ADPBaseView.m */,
+				B43238D221C25EC800219B25 /* ADPConfigs.h */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		B45B892D21BFB78E005C930F /* Extend */ = {
+			isa = PBXGroup;
+			children = (
+				B45B892E21BFB7B9005C930F /* UIColor+Utils.h */,
+				B45B892F21BFB7B9005C930F /* UIColor+Utils.m */,
+			);
+			path = Extend;
+			sourceTree = "<group>";
+		};
+		B4972FC621BA221B0066FA8B /* ADPPlayControllView */ = {
+			isa = PBXGroup;
+			children = (
+				B4972FCA21BA53CE0066FA8B /* ToolView */,
+				B466095D21B9237200354D1F /* ADPPlayControllView.h */,
+				B466095E21B9237200354D1F /* ADPPlayControllView.m */,
+			);
+			path = ADPPlayControllView;
+			sourceTree = "<group>";
+		};
+		B4972FCA21BA53CE0066FA8B /* ToolView */ = {
+			isa = PBXGroup;
+			children = (
+				B43238C621C2536A00219B25 /* 音量亮度 */,
+				B4972FC321BA196B0066FA8B /* ADPPlayPauseButton.h */,
+				B4972FC421BA196B0066FA8B /* ADPPlayPauseButton.m */,
+				B4972FC721BA22650066FA8B /* ADPControllContainerView.h */,
+				B4972FC821BA22650066FA8B /* ADPControllContainerView.m */,
+				B4357C1121BE703E00BDA7D6 /* ADPSlider.h */,
+				B4357C1221BE703E00BDA7D6 /* ADPSlider.m */,
+			);
+			path = ToolView;
+			sourceTree = "<group>";
+		};
+		B49B80BA21B524D400EE7C7C = {
+			isa = PBXGroup;
+			children = (
+				B49B80C521B524D400EE7C7C /* ADPPlayer */,
+				B49B80DE21B524D700EE7C7C /* ADPPlayerTests */,
+				B49B80E921B524D700EE7C7C /* ADPPlayerUITests */,
+				B49B80C421B524D400EE7C7C /* Products */,
+				66186A0A9AFBA70765BF6829 /* Pods */,
+				E542A1A84CE332C13D652B19 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B49B80C421B524D400EE7C7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B49B80C321B524D400EE7C7C /* ADPPlayer.app */,
+				B49B80DB21B524D700EE7C7C /* ADPPlayerTests.xctest */,
+				B49B80E621B524D700EE7C7C /* ADPPlayerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B49B80C521B524D400EE7C7C /* ADPPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				B4865B5F21B67D42008BF2DD /* sao2.mp4 */,
+				B454557621B5278300602F00 /* ADPAVPlayer */,
+				B49B80C621B524D400EE7C7C /* AppDelegate.h */,
+				B49B80C721B524D400EE7C7C /* AppDelegate.m */,
+				B49B80C921B524D400EE7C7C /* ViewController.h */,
+				B49B80CA21B524D400EE7C7C /* ViewController.m */,
+				B49B80CC21B524D400EE7C7C /* Main.storyboard */,
+				B49B80CF21B524D700EE7C7C /* Assets.xcassets */,
+				B49B80D121B524D700EE7C7C /* LaunchScreen.storyboard */,
+				B49B80D421B524D700EE7C7C /* Info.plist */,
+				B49B80D521B524D700EE7C7C /* main.m */,
+			);
+			path = ADPPlayer;
+			sourceTree = "<group>";
+		};
+		B49B80DE21B524D700EE7C7C /* ADPPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				B49B80DF21B524D700EE7C7C /* ADPPlayerTests.m */,
+				B49B80E121B524D700EE7C7C /* Info.plist */,
+			);
+			path = ADPPlayerTests;
+			sourceTree = "<group>";
+		};
+		B49B80E921B524D700EE7C7C /* ADPPlayerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B49B80EA21B524D700EE7C7C /* ADPPlayerUITests.m */,
+				B49B80EC21B524D700EE7C7C /* Info.plist */,
+			);
+			path = ADPPlayerUITests;
+			sourceTree = "<group>";
+		};
+		E542A1A84CE332C13D652B19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4865B5721B63474008BF2DD /* AVKit.framework */,
+				B4865B5521B63234008BF2DD /* AVFoundation.framework */,
+				95BD782EAF8FD8DBBFB68D1C /* libPods-ADPPlayer.a */,
+				CB0860228A81571F1D303B50 /* libPods-ADPPlayerTests.a */,
+				F8E682E241C796E8189F1025 /* libPods-ADPPlayerUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B49B80C221B524D400EE7C7C /* ADPPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B49B80EF21B524D700EE7C7C /* Build configuration list for PBXNativeTarget "ADPPlayer" */;
+			buildPhases = (
+				DDEC98B4635C2F17A02631FD /* [CP] Check Pods Manifest.lock */,
+				B49B80BF21B524D400EE7C7C /* Sources */,
+				B49B80C021B524D400EE7C7C /* Frameworks */,
+				B49B80C121B524D400EE7C7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ADPPlayer;
+			productName = ADPPlayer;
+			productReference = B49B80C321B524D400EE7C7C /* ADPPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B49B80DA21B524D700EE7C7C /* ADPPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B49B80F221B524D700EE7C7C /* Build configuration list for PBXNativeTarget "ADPPlayerTests" */;
+			buildPhases = (
+				EB3F2C0305B440F6618A9487 /* [CP] Check Pods Manifest.lock */,
+				B49B80D721B524D700EE7C7C /* Sources */,
+				B49B80D821B524D700EE7C7C /* Frameworks */,
+				B49B80D921B524D700EE7C7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B49B80DD21B524D700EE7C7C /* PBXTargetDependency */,
+			);
+			name = ADPPlayerTests;
+			productName = ADPPlayerTests;
+			productReference = B49B80DB21B524D700EE7C7C /* ADPPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B49B80E521B524D700EE7C7C /* ADPPlayerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B49B80F521B524D700EE7C7C /* Build configuration list for PBXNativeTarget "ADPPlayerUITests" */;
+			buildPhases = (
+				277E8DFE0ACD50E67DA9A30A /* [CP] Check Pods Manifest.lock */,
+				B49B80E221B524D700EE7C7C /* Sources */,
+				B49B80E321B524D700EE7C7C /* Frameworks */,
+				B49B80E421B524D700EE7C7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B49B80E821B524D700EE7C7C /* PBXTargetDependency */,
+			);
+			name = ADPPlayerUITests;
+			productName = ADPPlayerUITests;
+			productReference = B49B80E621B524D700EE7C7C /* ADPPlayerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B49B80BB21B524D400EE7C7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Zeaple;
+				TargetAttributes = {
+					B49B80C221B524D400EE7C7C = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					B49B80DA21B524D700EE7C7C = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = B49B80C221B524D400EE7C7C;
+					};
+					B49B80E521B524D700EE7C7C = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = B49B80C221B524D400EE7C7C;
+					};
+				};
+			};
+			buildConfigurationList = B49B80BE21B524D400EE7C7C /* Build configuration list for PBXProject "ADPPlayer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B49B80BA21B524D400EE7C7C;
+			productRefGroup = B49B80C421B524D400EE7C7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B49B80C221B524D400EE7C7C /* ADPPlayer */,
+				B49B80DA21B524D700EE7C7C /* ADPPlayerTests */,
+				B49B80E521B524D700EE7C7C /* ADPPlayerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B49B80C121B524D400EE7C7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B49B80D321B524D700EE7C7C /* LaunchScreen.storyboard in Resources */,
+				B49B80D021B524D700EE7C7C /* Assets.xcassets in Resources */,
+				B49B80CE21B524D400EE7C7C /* Main.storyboard in Resources */,
+				B4972FC221BA18AF0066FA8B /* ADPPlayerImagesAssets.xcassets in Resources */,
+				B4865B6021B67D42008BF2DD /* sao2.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B49B80D921B524D700EE7C7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B49B80E421B524D700EE7C7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		277E8DFE0ACD50E67DA9A30A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ADPPlayerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDEC98B4635C2F17A02631FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ADPPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB3F2C0305B440F6618A9487 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ADPPlayerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B49B80BF21B524D400EE7C7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B43238CD21C2590200219B25 /* ADPBrigntnessView.m in Sources */,
+				B49B80CB21B524D400EE7C7C /* ViewController.m in Sources */,
+				B4865B5E21B67558008BF2DD /* ADPPlayerViewController.m in Sources */,
+				B466095C21B91C8A00354D1F /* ADPAVPlayerView.m in Sources */,
+				B49B80D621B524D700EE7C7C /* main.m in Sources */,
+				B4972FC921BA22650066FA8B /* ADPControllContainerView.m in Sources */,
+				B43238D021C2590E00219B25 /* ADPVolumeView.m in Sources */,
+				B4972FC521BA196B0066FA8B /* ADPPlayPauseButton.m in Sources */,
+				B49B80C821B524D400EE7C7C /* AppDelegate.m in Sources */,
+				B466095F21B9237200354D1F /* ADPPlayControllView.m in Sources */,
+				B45B893021BFB7B9005C930F /* UIColor+Utils.m in Sources */,
+				B4357C1321BE703E00BDA7D6 /* ADPSlider.m in Sources */,
+				B466096221B923B100354D1F /* ADPBaseView.m in Sources */,
+				B43238CA21C2538800219B25 /* ADPIconProgressIndicatorBaseView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B49B80D721B524D700EE7C7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B49B80E021B524D700EE7C7C /* ADPPlayerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B49B80E221B524D700EE7C7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B49B80EB21B524D700EE7C7C /* ADPPlayerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B49B80DD21B524D700EE7C7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B49B80C221B524D400EE7C7C /* ADPPlayer */;
+			targetProxy = B49B80DC21B524D700EE7C7C /* PBXContainerItemProxy */;
+		};
+		B49B80E821B524D700EE7C7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B49B80C221B524D400EE7C7C /* ADPPlayer */;
+			targetProxy = B49B80E721B524D700EE7C7C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B49B80CC21B524D400EE7C7C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B49B80CD21B524D400EE7C7C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B49B80D121B524D700EE7C7C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B49B80D221B524D700EE7C7C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B49B80ED21B524D700EE7C7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B49B80EE21B524D700EE7C7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B49B80F021B524D700EE7C7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 572758A367395E6BE8E6C1E7 /* Pods-ADPPlayer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CLBP83MT37;
+				INFOPLIST_FILE = ADPPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeaple.ADPPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B49B80F121B524D700EE7C7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17F32C2F0638AB2FCEA45FC8 /* Pods-ADPPlayer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CLBP83MT37;
+				INFOPLIST_FILE = ADPPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeaple.ADPPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B49B80F321B524D700EE7C7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 393A39973D1C0EC2E5340733 /* Pods-ADPPlayerTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CLBP83MT37;
+				INFOPLIST_FILE = ADPPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeaple.ADPPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ADPPlayer.app/ADPPlayer";
+			};
+			name = Debug;
+		};
+		B49B80F421B524D700EE7C7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 513A7D044473E5D743C804C6 /* Pods-ADPPlayerTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CLBP83MT37;
+				INFOPLIST_FILE = ADPPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeaple.ADPPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ADPPlayer.app/ADPPlayer";
+			};
+			name = Release;
+		};
+		B49B80F621B524D700EE7C7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B15623D18954FAF5F24E58B8 /* Pods-ADPPlayerUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CLBP83MT37;
+				INFOPLIST_FILE = ADPPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeaple.ADPPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ADPPlayer;
+			};
+			name = Debug;
+		};
+		B49B80F721B524D700EE7C7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31885E2BB50AF4AB9A07451C /* Pods-ADPPlayerUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CLBP83MT37;
+				INFOPLIST_FILE = ADPPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeaple.ADPPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ADPPlayer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B49B80BE21B524D400EE7C7C /* Build configuration list for PBXProject "ADPPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B49B80ED21B524D700EE7C7C /* Debug */,
+				B49B80EE21B524D700EE7C7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B49B80EF21B524D700EE7C7C /* Build configuration list for PBXNativeTarget "ADPPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B49B80F021B524D700EE7C7C /* Debug */,
+				B49B80F121B524D700EE7C7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B49B80F221B524D700EE7C7C /* Build configuration list for PBXNativeTarget "ADPPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B49B80F321B524D700EE7C7C /* Debug */,
+				B49B80F421B524D700EE7C7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B49B80F521B524D700EE7C7C /* Build configuration list for PBXNativeTarget "ADPPlayerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B49B80F621B524D700EE7C7C /* Debug */,
+				B49B80F721B524D700EE7C7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B49B80BB21B524D400EE7C7C /* Project object */;
+}
