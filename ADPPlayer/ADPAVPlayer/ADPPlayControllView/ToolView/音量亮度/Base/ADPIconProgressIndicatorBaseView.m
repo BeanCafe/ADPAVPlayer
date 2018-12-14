@@ -48,8 +48,12 @@ static CGFloat const ADPIconProgressIndicatorBaseViewGap = 10.f;
 - (UISlider *)progressIndicator {
     if (!_progressIndicator) {
         _progressIndicator = [[UISlider alloc]init];
-        _progressIndicator.thumbTintColor = [UIColor clearColor];
+        [_progressIndicator setThumbImage:[UIImage imageNamed:@"brightnessVolumeIndicator"] forState:UIControlStateNormal];
+        _progressIndicator.userInteractionEnabled = NO;
         _progressIndicator.minimumTrackTintColor = [UIColor colorWithHexString:ADPMainColorHexStr];
+        
+        _progressIndicator.value = 0.0f;
+        
         //系统slider颜色182, 182, 182, 调整未缓冲完成tracking轨道颜色为淡一点的颜色
         [_progressIndicator setMaximumTrackTintColor:[UIColor colorWithRed:182./256 green:182./256 blue:182./256 alpha:0.6]];
     }

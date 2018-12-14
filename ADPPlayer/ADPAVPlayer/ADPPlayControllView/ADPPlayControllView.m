@@ -10,18 +10,19 @@
 
 #import "ADPPlayPauseButton.h"
 #import "ADPControllContainerView.h"
-#import "ADPBrigntnessView.h"
-#import "ADPVolumeView.h"
 
 @interface ADPPlayControllView () {
-    CGPoint _panGestureStartPoint;
+    /*
+     * 用于记录拖动手势的方向
+     * 由于手势的方法会进行多次调用
+     * 因此对滑动方向进行记录, 一次手势结束前, 只进行一次滑动方向的判断
+     */
+    ADPPanGestureDirection _panGestureDirection;
 }
 
 @property(strong, nonatomic)ADPControllContainerView *topContainerView;
 @property(strong, nonatomic)ADPControllContainerView *bottomContainerView;
 @property (strong, nonatomic, readwrite)ADPPlayPauseButton *playPauseButton;
-@property(strong, nonatomic)ADPVolumeView *volumeView;
-@property(strong, nonatomic)ADPBrigntnessView *brightnessView;
 @end
 
 @implementation ADPPlayControllView
@@ -34,6 +35,8 @@
         [self addSubview:self.topContainerView];
         [self addSubview:self.bottomContainerView];
         [self addSubview:self.brightnessView];
+        [self addSubview:self.volumeView];
+        
         
         [self.bottomContainerView addSubview:self.playPauseButton];
         [self.bottomContainerView addSubview:self.currentAndDurationTimeLabel];
@@ -101,6 +104,7 @@
 - (ADPBrigntnessView *)brightnessView {
     if (!_brightnessView) {
         _brightnessView = [[ADPBrigntnessView alloc]init];
+        _brightnessView.hidden = YES;
     }
     return _brightnessView;
 }
@@ -108,6 +112,7 @@
 - (ADPVolumeView *)volumeView {
     if (!_volumeView) {
         _volumeView = [[ADPVolumeView alloc]init];
+        _volumeView.hidden = YES;
     }
     return _volumeView;
 }
@@ -169,6 +174,13 @@
         make.width.mas_equalTo(130);
         make.height.mas_equalTo(44);
     }];
+    
+    [_volumeView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.mas_centerX);
+        make.centerY.mas_equalTo(self.mas_centerY);
+        make.width.mas_equalTo(130);
+        make.height.mas_equalTo(44);
+    }];
 }
 
 - (void)newCurrentTimeInDisplayLabel:(NSString *)currentTime {
@@ -206,21 +218,82 @@
 }
 
 - (void)panGestureRecognizerAction:(UIPanGestureRecognizer *)pan {
-    CGPoint point = [pan locationInView:self];
-    NSLog(@"location:x:%f, location:y:%f", point.x, point.y);
     if (pan.state == UIGestureRecognizerStateBegan) {
-        _panGestureStartPoint = point;
-    }
-    if (pan.state == UIGestureRecognizerStateEnded || pan.state == UIGestureRecognizerStateFailed) {
-        _panGestureStartPoint = CGPointZero;
+        //当手势开始时记录开始point
+        CGPoint point = [pan locationInView:self];
     }
     
-    if (pan.state == UIGestureRecognizerStateChanged) {
-        [self handleAffairAccordingToPanTypeWithPanGesture:pan];
+    /*
+     * 进行滑动方向的判定, 每个手势期内仅进行一次滑动方向的判定
+     * 再手势状态变更为UIGestureRecognizerStateEnded时进行重置
+     */
+    if (_panGestureDirection == ADPPanGestureDirectionUndetermined) {
+        _panGestureDirection = [self directionOfPanGesture:pan];
     }
-    if (pan.state == UIGestureRecognizerStateEnded) {
-        //当滑动结束时发送结束events
-        [self.progressSlider sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    //向右向下滑动速度
+    CGPoint panVel = [pan velocityInView:self];
+    //滑动速度
+    CGFloat velX = panVel.x;
+    CGFloat velY = panVel.y;
+    switch (_panGestureDirection) {
+        case ADPPanGestureDirectionHorizontal:
+        {
+            if (pan.state == UIGestureRecognizerStateChanged) {
+                //分别处理横向滑动与竖向滑动
+                //直接以滑动速度作为作为滑动参考, 因为滑动速度向右滑为正, 向左滑为负, 正好作为滑动参考, 来变化进度条数值
+                self.progressSlider.value += (velX/20);
+                //发送值变更的消息
+                [self.progressSlider sendActionsForControlEvents:UIControlEventValueChanged];
+            }
+            //当滑动结束时, 发送视频进度条结束events
+            if (pan.state == UIGestureRecognizerStateEnded) {
+                [self.progressSlider sendActionsForControlEvents:UIControlEventTouchUpInside];
+            }
+        }
+            break;
+        case ADPPanGestureDirectionVerticalLeftArea:
+        {
+            if (pan.state == UIGestureRecognizerStateChanged) {
+                if (self.brightnessView.hidden) {
+                    self.brightnessView.hidden = NO;
+                }
+                //左半部分为亮度
+                self.brightnessView.progressIndicator.value += (velY/2000);
+                [self.brightnessView.progressIndicator sendActionsForControlEvents:UIControlEventValueChanged];
+            }
+            
+            if (pan.state == UIGestureRecognizerStateEnded) {
+                self.brightnessView.hidden = YES;
+                [self.brightnessView.progressIndicator sendActionsForControlEvents:UIControlEventTouchUpInside];
+            }
+        }
+            break;
+        case ADPPanGestureDirectionVerticalRightArea:
+        {
+            if (pan.state == UIGestureRecognizerStateChanged) {
+                if (self.volumeView.hidden) {
+                    self.volumeView.hidden = NO;
+                }
+                //左半部分为亮度
+                self.volumeView.progressIndicator.value += (velY/2000);
+                [self.volumeView.progressIndicator sendActionsForControlEvents:UIControlEventValueChanged];
+            }
+            
+            if (pan.state == UIGestureRecognizerStateEnded) {
+                self.volumeView.hidden = YES;
+                [self.volumeView.progressIndicator sendActionsForControlEvents:UIControlEventTouchUpInside];
+            }
+        }
+            break;
+
+        default:
+            break;
+    }
+    
+    if (pan.state == UIGestureRecognizerStateEnded || pan.state == UIGestureRecognizerStateFailed) {
+        //重置拖动手势方向
+        _panGestureDirection = ADPPanGestureDirectionUndetermined;
     }
 }
 
@@ -229,7 +302,7 @@
 
  @param panGesture 拖动的当前点
  */
-- (ADPPanGestureDirection)handleAffairAccordingToPanTypeWithPanGesture:(UIPanGestureRecognizer *)panGesture {
+- (ADPPanGestureDirection)directionOfPanGesture:(UIPanGestureRecognizer *)panGesture {
     CGPoint panPoint = [panGesture locationInView:self];
     //向右向下滑动速度
     CGPoint panVel = [panGesture velocityInView:self];
@@ -240,31 +313,59 @@
     if (MAX(absX, absY)<10) return ADPPanGestureDirectionCancel;
 
     CGFloat pointX = panPoint.x;
-    CGFloat pointY = panPoint.y;
 
-    //差值
-    CGFloat xMinus = pointX-_panGestureStartPoint.x;
-    CGFloat yMinus = pointY-_panGestureStartPoint.y;
-    //差值绝对值
-    CGFloat absXMinus = fabs(pointX-_panGestureStartPoint.x);
-    CGFloat absYMinus = fabs(pointY-_panGestureStartPoint.y);
+//    //差值
+//    CGFloat xMinus = pointX-_panGestureStartPoint.x;
+//    CGFloat yMinus = pointY-_panGestureStartPoint.y;
+//    //差值绝对值
+//    CGFloat absXMinus = fabs(pointX-_panGestureStartPoint.x);
+//    CGFloat absYMinus = fabs(pointY-_panGestureStartPoint.y);
     //滑动速度
     CGFloat velX = panVel.x;
     CGFloat velY = panVel.y;
+    CGFloat absVelX = fabs(velX);
+    CGFloat absVelY = fabs(velY);
     
-    if (absYMinus<60) {
-        //直接以滑动速度作为作为滑动参考, 因为滑动速度向右滑为正, 向左滑为负, 正好作为滑动参考, 来变化进度条数值
-        self.progressSlider.value += (velX/20);
-        [self.progressSlider sendActionsForControlEvents:UIControlEventValueChanged];
-    } else if (absXMinus<30) {
+    if (absVelY<100) {
+        //横向滑动
+        return ADPPanGestureDirectionHorizontal;
+//        //直接以滑动速度作为作为滑动参考, 因为滑动速度向右滑为正, 向左滑为负, 正好作为滑动参考, 来变化进度条数值
+//        self.progressSlider.value += (velX/20);
+//        //发送值变更的消息
+//        [self.progressSlider sendActionsForControlEvents:UIControlEventValueChanged];
+//
+//        //当滑动结束时, 发送视频进度条结束events
+//        if (panGesture.state == UIGestureRecognizerStateEnded) {
+//            [self.progressSlider sendActionsForControlEvents:UIControlEventTouchUpInside];
+//        }
+    } else if (absVelX<100) {
         //竖向滑动
-        
-        NSLog(@"handle:竖向滑动");
-        if (yMinus<0) {
-            NSLog(@"handle:向上滑动");
+        //判断滑动的点在视图左半部分还是右半部分
+        if (pointX<(self.frame.size.width/2)) {
+            return ADPPanGestureDirectionVerticalLeftArea;
+//            if (self.brightnessView.hidden) {
+//                self.brightnessView.hidden = NO;
+//            }
+//            //左半部分为亮度
+//            self.brightnessView.progressIndicator.value += (velY/500);
+//
+//            if (panGesture.state == UIGestureRecognizerStateEnded) {
+//                self.brightnessView.hidden = YES;
+//            }
         } else {
-            NSLog(@"handle:向下滑动");
+            return ADPPanGestureDirectionVerticalRightArea;
+//            //右半部分为音量
+//            if (self.volumeView.hidden) {
+//                self.volumeView.hidden = NO;
+//            }
+//            //左半部分为亮度
+//            self.volumeView.progressIndicator.value += (velY/500);
+//
+//            if (panGesture.state == UIGestureRecognizerStateEnded) {
+//                self.volumeView.hidden = YES;
+//            }
         }
+//        NSLog(@"handle:竖向滑动");
     }
     return ADPPanGestureDirectionCancel;
 }

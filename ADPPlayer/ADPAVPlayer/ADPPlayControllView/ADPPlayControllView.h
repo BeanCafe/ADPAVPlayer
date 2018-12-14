@@ -9,6 +9,8 @@
 #import "ADPBaseView.h"
 #import "ADPPlayPauseButton.h"
 #import "ADPSlider.h"
+#import "ADPBrigntnessView.h"
+#import "ADPVolumeView.h"
 
 @class ADPPlayControllView;
 @protocol ADPPlayControllViewDelegate<NSObject>
@@ -24,10 +26,10 @@
 @end
 
 typedef NS_ENUM(NSUInteger, ADPPanGestureDirection) {
-    ADPPanGestureDirectionLeft,
-    ADPPanGestureDirectionRight,
-    ADPPanGestureDirectionUp,
-    ADPPanGestureDirectionDown,
+    ADPPanGestureDirectionUndetermined,
+    ADPPanGestureDirectionHorizontal,
+    ADPPanGestureDirectionVerticalLeftArea,
+    ADPPanGestureDirectionVerticalRightArea,
     ADPPanGestureDirectionCancel,
 };
 
@@ -39,6 +41,9 @@ typedef NS_ENUM(NSUInteger, ADPPanGestureDirection) {
 
 @property(strong, nonatomic)UILabel *currentAndDurationTimeLabel;
 @property(strong, nonatomic)ADPSlider *progressSlider;
+
+@property(strong, nonatomic)ADPVolumeView *volumeView;
+@property(strong, nonatomic)ADPBrigntnessView *brightnessView;
 
 @property (weak, nonatomic)id<ADPPlayControllViewDelegate>delegate;
 @end

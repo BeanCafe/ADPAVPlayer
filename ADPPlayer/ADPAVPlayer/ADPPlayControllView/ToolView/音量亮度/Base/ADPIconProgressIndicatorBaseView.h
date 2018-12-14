@@ -11,6 +11,12 @@
 @interface ADPIconProgressIndicatorBaseView : ADPBaseView
 
 @property(strong, nonatomic)UIImageView *iconImageView;
+
+/**
+ 音量亮度提示框
+ 
+ 值区间0.f-1.f
+ */
 @property(strong, nonatomic)UISlider *progressIndicator;
 
 @end

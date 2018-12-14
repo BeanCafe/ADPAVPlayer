@@ -86,6 +86,8 @@ NSString* const ADPPlayerPlayItemDurationKey = @"player.currentItem.duration";
         _controllView.delegate = self;
         [_controllView.progressSlider addTarget:self action:@selector(playSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
         [_controllView.progressSlider addTarget:self action:@selector(playSliderTouchupInside:) forControlEvents:UIControlEventTouchUpInside];
+        [_controllView.brightnessView.progressIndicator addTarget:self action:@selector(brightnessIndicatorValueChanged:) forControlEvents:UIControlEventValueChanged];
+        [_controllView.volumeView.progressIndicator addTarget:self action:@selector(volumeIndicatorValueChanged:) forControlEvents:UIControlEventValueChanged];
     }
     return _controllView;
 }
@@ -141,6 +143,22 @@ NSString* const ADPPlayerPlayItemDurationKey = @"player.currentItem.duration";
     [self removeTimePlayObservingToken];
     //移除监听avaplayer播放资源总时长的变化
     [self removeObserver:self forKeyPath:ADPPlayerPlayItemDurationKey];
+}
+
+/**
+ 亮度变化
+ 
+ */
+- (void)brightnessIndicatorValueChanged:(UISlider *)slider {
+    [[UIScreen mainScreen] setBrightness:slider.value];
+}
+
+/**
+ 音量变化
+
+ */
+- (void)volumeIndicatorValueChanged:(UISlider *)slider {
+    self.player.volume = slider.value;
 }
 
 /**
