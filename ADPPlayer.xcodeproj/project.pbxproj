@@ -16,6 +16,7 @@
 		B466095C21B91C8A00354D1F /* ADPAVPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B466095B21B91C8A00354D1F /* ADPAVPlayerView.m */; };
 		B466095F21B9237200354D1F /* ADPPlayControllView.m in Sources */ = {isa = PBXBuildFile; fileRef = B466095E21B9237200354D1F /* ADPPlayControllView.m */; };
 		B466096221B923B100354D1F /* ADPBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B466096121B923B100354D1F /* ADPBaseView.m */; };
+		B47CD62B21C3BA17001E9CA1 /* sao2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B47CD62A21C3BA17001E9CA1 /* sao2.mp4 */; };
 		B4865B5621B63234008BF2DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4865B5521B63234008BF2DD /* AVFoundation.framework */; };
 		B4865B5821B63474008BF2DD /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4865B5721B63474008BF2DD /* AVKit.framework */; };
 		B4865B5E21B67558008BF2DD /* ADPPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4865B5D21B67558008BF2DD /* ADPPlayerViewController.m */; };
@@ -76,6 +77,7 @@
 		B466095E21B9237200354D1F /* ADPPlayControllView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPPlayControllView.m; sourceTree = "<group>"; };
 		B466096021B923B100354D1F /* ADPBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPBaseView.h; sourceTree = "<group>"; };
 		B466096121B923B100354D1F /* ADPBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPBaseView.m; sourceTree = "<group>"; };
+		B47CD62A21C3BA17001E9CA1 /* sao2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sao2.mp4; sourceTree = "<group>"; };
 		B4865B5521B63234008BF2DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B4865B5721B63474008BF2DD /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		B4865B5C21B67558008BF2DD /* ADPPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPPlayerViewController.h; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 		B49B80C521B524D400EE7C7C /* ADPPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				B47CD62A21C3BA17001E9CA1 /* sao2.mp4 */,
 				B454557621B5278300602F00 /* ADPAVPlayer */,
 				B49B80C621B524D400EE7C7C /* AppDelegate.h */,
 				B49B80C721B524D400EE7C7C /* AppDelegate.m */,
@@ -405,6 +408,7 @@
 				B49B80D321B524D700EE7C7C /* LaunchScreen.storyboard in Resources */,
 				B49B80D021B524D700EE7C7C /* Assets.xcassets in Resources */,
 				B49B80CE21B524D400EE7C7C /* Main.storyboard in Resources */,
+				B47CD62B21C3BA17001E9CA1 /* sao2.mp4 in Resources */,
 				B4972FC221BA18AF0066FA8B /* ADPPlayerImagesAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
