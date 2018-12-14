@@ -62,6 +62,7 @@ static CGFloat const ADPIconProgressIndicatorBaseViewGap = 10.f;
         _backGrayView.backgroundColor = [UIColor blackColor];
         _backGrayView.alpha = 0.3;
         _backGrayView.layer.cornerRadius = 10;
+        
     }
     return _backGrayView;
 }
