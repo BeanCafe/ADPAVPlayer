@@ -19,7 +19,6 @@
 		B4865B5621B63234008BF2DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4865B5521B63234008BF2DD /* AVFoundation.framework */; };
 		B4865B5821B63474008BF2DD /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4865B5721B63474008BF2DD /* AVKit.framework */; };
 		B4865B5E21B67558008BF2DD /* ADPPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4865B5D21B67558008BF2DD /* ADPPlayerViewController.m */; };
-		B4896A3021C3555A00C7FED4 /* sao2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B4896A2F21C3555900C7FED4 /* sao2.mp4 */; };
 		B4972FC221BA18AF0066FA8B /* ADPPlayerImagesAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4972FC121BA18AF0066FA8B /* ADPPlayerImagesAssets.xcassets */; };
 		B4972FC521BA196B0066FA8B /* ADPPlayPauseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B4972FC421BA196B0066FA8B /* ADPPlayPauseButton.m */; };
 		B4972FC921BA22650066FA8B /* ADPControllContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4972FC821BA22650066FA8B /* ADPControllContainerView.m */; };
@@ -81,7 +80,6 @@
 		B4865B5721B63474008BF2DD /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		B4865B5C21B67558008BF2DD /* ADPPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPPlayerViewController.h; sourceTree = "<group>"; };
 		B4865B5D21B67558008BF2DD /* ADPPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPPlayerViewController.m; sourceTree = "<group>"; };
-		B4896A2F21C3555900C7FED4 /* sao2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sao2.mp4; sourceTree = "<group>"; };
 		B4972FC121BA18AF0066FA8B /* ADPPlayerImagesAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ADPPlayerImagesAssets.xcassets; sourceTree = "<group>"; };
 		B4972FC321BA196B0066FA8B /* ADPPlayPauseButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPPlayPauseButton.h; sourceTree = "<group>"; };
 		B4972FC421BA196B0066FA8B /* ADPPlayPauseButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADPPlayPauseButton.m; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 		B49B80C521B524D400EE7C7C /* ADPPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				B4896A2F21C3555900C7FED4 /* sao2.mp4 */,
 				B454557621B5278300602F00 /* ADPAVPlayer */,
 				B49B80C621B524D400EE7C7C /* AppDelegate.h */,
 				B49B80C721B524D400EE7C7C /* AppDelegate.m */,
@@ -408,7 +405,6 @@
 				B49B80D321B524D700EE7C7C /* LaunchScreen.storyboard in Resources */,
 				B49B80D021B524D700EE7C7C /* Assets.xcassets in Resources */,
 				B49B80CE21B524D400EE7C7C /* Main.storyboard in Resources */,
-				B4896A3021C3555A00C7FED4 /* sao2.mp4 in Resources */,
 				B4972FC221BA18AF0066FA8B /* ADPPlayerImagesAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
