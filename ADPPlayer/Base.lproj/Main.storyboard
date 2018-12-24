@@ -41,6 +41,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jiz-q3-Bx7">
+                                <rect key="frame" x="67" y="418" width="158" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -53,10 +58,12 @@
                     </view>
                     <connections>
                         <outlet property="greenView" destination="cSg-rp-kCa" id="QAT-Rg-S35"/>
+                        <outlet property="redView" destination="jiz-q3-Bx7" id="bFb-pV-Vkc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="72.799999999999997" y="104.7976011994003"/>
         </scene>
     </scenes>
 </document>

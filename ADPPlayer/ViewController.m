@@ -16,6 +16,7 @@
 @interface ViewController ()
 @property(strong, nonatomic)AVPlayerItem *playItem;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
+@property (weak, nonatomic) IBOutlet UIView *redView;
 @end
 
 @implementation ViewController
@@ -31,6 +32,20 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self presentPlayer];
+}
+
+- (void)testTransform {
+    [UIView animateWithDuration:0.3 animations:^{
+//        self.redView.transform = CGAffineTransformRotate(self.redView.transform, M_PI_4);
+//        self.redView.transform = CGAffineTransformScale(self.redView.transform, 1.2, 1.2);
+//        self.redView.transform = CGAffineTransformScale(self.redView.transform, 0.8, 0.8);
+//        self.redView.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(M_PI_4), CGAffineTransformMakeScale(0.8, 0.8));
+        
+        //旋转加缩小
+//        self.redView.transform = CGAffineTransformConcat(CGAffineTransformRotate(self.redView.transform, M_PI_4), CGAffineTransformMakeScale(0.8, 0.8));
+//        self.redView.layer.transform = CATransform3DRotate(self.redView.layer.transform, M_PI_2, , <#CGFloat y#>, <#CGFloat z#>)
+
+    }];
 }
 
 - (void)testSublayer {
@@ -67,6 +82,7 @@
 //    play.player = [AVPlayer playerWithPlayerItem:self.playItem];
 //    [self presentViewController:play animated:YES completion:nil];
     
+//    [self testTransform];
     ADPPlayerViewController *player = [[ADPPlayerViewController alloc]init];
     [self presentViewController:player animated:YES completion:nil];
 }

@@ -27,17 +27,35 @@
 
 @implementation ADPPlayControllView
 
-- (instancetype)initWithFrame:(CGRect)frame
+//- (instancetype)initWithFrame:(CGRect)frame
+//{
+//    self = [super initWithFrame:frame];
+//    if (self) {
+////        self.backgroundColor = [UIColor whiteColor];
+//        [self addSubview:self.topContainerView];
+//        [self addSubview:self.bottomContainerView];
+//        [self addSubview:self.brightnessView];
+//        [self addSubview:self.volumeView];
+//
+//
+//        [self.bottomContainerView addSubview:self.playPauseButton];
+//        [self.bottomContainerView addSubview:self.currentAndDurationTimeLabel];
+//        [self.bottomContainerView addSubview:self.progressSlider];
+//        [self setUpBaseView];
+//        [self makeMasonryLayOuts];
+//    }
+//    return self;
+//}
+
+- (instancetype)init
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     if (self) {
-//        self.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.topContainerView];
         [self addSubview:self.bottomContainerView];
         [self addSubview:self.brightnessView];
         [self addSubview:self.volumeView];
-        
-        
+
         [self.bottomContainerView addSubview:self.playPauseButton];
         [self.bottomContainerView addSubview:self.currentAndDurationTimeLabel];
         [self.bottomContainerView addSubview:self.progressSlider];

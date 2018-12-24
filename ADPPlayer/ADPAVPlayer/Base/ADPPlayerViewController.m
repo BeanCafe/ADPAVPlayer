@@ -39,7 +39,64 @@ NSString* const ADPPlayerPlayItemDurationKey = @"player.currentItem.duration";
     [self.view addSubview:self.playerView];
     [self.view sendSubviewToBack:self.playerView];
     
+    [self makeMasonryLayOuts];
     [self playSAO];
+}
+
+#pragma mark - 屏幕旋转方向控制
+
+/**
+ 强制手动旋转屏幕
+ 未完成:先验证一下要当前的屏幕方向
+
+ @param orientation 目标屏幕方向
+ */
+- (void)handControlRotate:(UIInterfaceOrientation)orientation {
+    //计算旋转角度
+    [[UIApplication sharedApplication] setStatusBarOrientation:orientation animated:YES];
+    float arch;
+    if (orientation == UIInterfaceOrientationLandscapeLeft)
+        arch = -M_PI_2;
+    else if (orientation == UIInterfaceOrientationLandscapeRight)
+        arch = M_PI_2;
+    else
+        arch = 0;
+    //对navigationController.view 进行强制旋转
+    [UIView animateWithDuration:0.3f delay:0.f options:UIViewAnimationOptionCurveLinear animations:^{
+        self.view.bounds = [[UIScreen mainScreen]bounds];
+        self.view.transform = CGAffineTransformMakeRotation(arch);
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+/**
+ 监听屏幕旋转通知
+
+ @param notification 通知
+ */
+- (void)handleUIDeviceOrientationChangeNotification:(NSNotification *)notification {
+    UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+    switch (orientation) {
+        case UIDeviceOrientationPortrait:
+        {
+            
+        }
+            break;
+        case UIDeviceOrientationLandscapeLeft:
+        {
+            
+        }
+            break;
+        case UIDeviceOrientationLandscapeRight:
+        {
+            
+        }
+            break;
+
+        default:
+            break;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -58,6 +115,14 @@ NSString* const ADPPlayerPlayItemDurationKey = @"player.currentItem.duration";
     return UIStatusBarStyleLightContent;
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
 //- (void)dealloc {
 //    [self removeObserver:self forKeyPath:ADPPlayerPlayItemDurationKey];
 //}
@@ -73,7 +138,7 @@ NSString* const ADPPlayerPlayItemDurationKey = @"player.currentItem.duration";
 
 - (ADPAVPlayerView *)playerView {
     if (!_playerView) {
-        _playerView = [[ADPAVPlayerView alloc]initWithFrame:self.controllView.frame];
+        _playerView = [[ADPAVPlayerView alloc]init];
         _playerView.player = self.player;
     }
     return _playerView;
@@ -81,8 +146,9 @@ NSString* const ADPPlayerPlayItemDurationKey = @"player.currentItem.duration";
 
 - (ADPPlayControllView *)controllView {
     if (!_controllView) {
-        CGFloat controllViewWidth = [[UIScreen mainScreen]bounds].size.width;
-        _controllView = [[ADPPlayControllView alloc]initWithFrame:CGRectMake(0, 0, controllViewWidth, controllViewWidth*9/16)];
+//        CGFloat controllViewWidth = [[UIScreen mainScreen]bounds].size.width;
+//        _controllView = [[ADPPlayControllView alloc]initWithFrame:CGRectMake(0, 0, controllViewWidth, controllViewWidth*9/16)];
+        _controllView = [[ADPPlayControllView alloc]init];
         _controllView.delegate = self;
         [_controllView.progressSlider addTarget:self action:@selector(playSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
         [_controllView.progressSlider addTarget:self action:@selector(playSliderTouchupInside:) forControlEvents:UIControlEventTouchUpInside];
@@ -105,14 +171,6 @@ NSString* const ADPPlayerPlayItemDurationKey = @"player.currentItem.duration";
     return _playSAOItem;
 }
 
-- (void)initPods {
-    _player = [[AVPlayer alloc]init];
-    
-    _playLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
-    _playLayer.frame = self.view.bounds;
-    [self.view.layer addSublayer:_playLayer];
-}
-
 - (void)playSAO {
     if (self.outsidePlayItem) {
         [_player replaceCurrentItemWithPlayerItem:self.outsidePlayItem];
@@ -121,6 +179,20 @@ NSString* const ADPPlayerPlayItemDurationKey = @"player.currentItem.duration";
     }
     [_player replaceCurrentItemWithPlayerItem:self.playSAOItem];
 //    [_player play];
+}
+
+- (void)makeMasonryLayOuts {
+    [_controllView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view.mas_left);
+        make.top.mas_equalTo(self.view.mas_top);
+        
+        make.width.mas_equalTo(self.view.mas_width);
+        make.height.mas_equalTo(self.view.mas_width).multipliedBy(9.f/16);
+    }];
+    
+    [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.controllView);
+    }];
 }
 
 #pragma mark - PrivateMethod
@@ -133,10 +205,14 @@ NSString* const ADPPlayerPlayItemDurationKey = @"player.currentItem.duration";
     [self.player play];
 }
 
+#pragma mark - 事件监听添加与监听移除
+
 - (void)addObserversAndCallBacksForAVPlayer {
     [self addTimePlayObservingToken];
     //监听avaplayer播放资源总时长的变化
     [self addObserver:self forKeyPath:ADPPlayerPlayItemDurationKey options:NSKeyValueObservingOptionNew |NSKeyValueObservingOptionInitial context:nil];
+    //监听设备方向改变
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(handleUIDeviceOrientationChangeNotification:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
 - (void)removeObserversAndCallBacksForAVPlayer {
@@ -144,6 +220,9 @@ NSString* const ADPPlayerPlayItemDurationKey = @"player.currentItem.duration";
     //移除监听avaplayer播放资源总时长的变化
     [self removeObserver:self forKeyPath:ADPPlayerPlayItemDurationKey];
 }
+
+//- (void)addObserverForDeviceOrientionChangeNotification {
+//}
 
 /**
  亮度变化
