@@ -20,9 +20,13 @@
     ADPPanGestureDirection _panGestureDirection;
 }
 
-@property(strong, nonatomic)ADPControllContainerView *topContainerView;
-@property(strong, nonatomic)ADPControllContainerView *bottomContainerView;
-@property (strong, nonatomic, readwrite)ADPPlayPauseButton *playPauseButton;
+@property(strong, nonatomic)ADPControllContainerView *topContainerView;//顶部控件容器
+@property(strong, nonatomic)ADPControllContainerView *bottomContainerView;//底部控件容器
+@property (strong, nonatomic, readwrite)ADPPlayPauseButton *playPauseButton;//播放暂停键
+@property(strong, nonatomic)UIButton *danMuOnOffButton;//弹幕开关按钮
+@property(strong, nonatomic)UIButton *danMuSettingButton;//弹幕设置
+@property(strong, nonatomic)UITextField *danMuPlaceHolderFireTextField;//弹幕占位发送框
+@property(strong, nonatomic)UIButton *videoQualityButton;
 @end
 
 @implementation ADPPlayControllView
@@ -133,6 +137,34 @@
         _volumeView.hidden = YES;
     }
     return _volumeView;
+}
+
+- (UIButton *)danMuOnOffButton {
+    if (!_danMuOnOffButton) {
+        _danMuOnOffButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    }
+    return _danMuOnOffButton;
+}
+
+- (UIButton *)danMuSettingButton {
+    if (!_danMuSettingButton) {
+        _danMuSettingButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    }
+    return _danMuSettingButton;
+}
+
+- (UITextField *)danMuPlaceHolderFireTextField {
+    if (!_danMuPlaceHolderFireTextField) {
+        _danMuPlaceHolderFireTextField = [[UITextField alloc]init];
+    }
+    return _danMuPlaceHolderFireTextField;
+}
+
+- (UIButton *)videoQualityButton {
+    if (!_videoQualityButton) {
+        _videoQualityButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    }
+    return _videoQualityButton;
 }
 
 #pragma mark - Setters
