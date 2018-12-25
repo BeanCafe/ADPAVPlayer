@@ -63,6 +63,11 @@
         [self.bottomContainerView addSubview:self.playPauseButton];
         [self.bottomContainerView addSubview:self.currentAndDurationTimeLabel];
         [self.bottomContainerView addSubview:self.progressSlider];
+        [self.bottomContainerView addSubview:self.danMuOnOffButton];
+        [self.bottomContainerView addSubview:self.danMuSettingButton];
+        [self.bottomContainerView addSubview:self.videoQualityButton];
+        [self.bottomContainerView addSubview:self.danMuPlaceHolderFireTextField];
+        
         [self setUpBaseView];
         [self makeMasonryLayOuts];
     }
@@ -100,7 +105,8 @@
         _currentAndDurationTimeLabel = [[UILabel alloc]init];
         _currentAndDurationTimeLabel.font = [UIFont boldSystemFontOfSize:12];
         _currentAndDurationTimeLabel.textColor = [UIColor whiteColor];
-        _currentAndDurationTimeLabel.text = @"00:09/26:88";
+//        _currentAndDurationTimeLabel.backgroundColor = [UIColor redColor];
+        _currentAndDurationTimeLabel.text = @"88:88/88:88";
     }
     return _currentAndDurationTimeLabel;
 }
@@ -142,6 +148,8 @@
 - (UIButton *)danMuOnOffButton {
     if (!_danMuOnOffButton) {
         _danMuOnOffButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_danMuOnOffButton setTitle:@"开启" forState:UIControlStateNormal];
+        [_danMuOnOffButton setTitle:@"关闭" forState:UIControlStateSelected];
     }
     return _danMuOnOffButton;
 }
@@ -149,6 +157,7 @@
 - (UIButton *)danMuSettingButton {
     if (!_danMuSettingButton) {
         _danMuSettingButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_danMuSettingButton setTitle:@"设置" forState:UIControlStateNormal];
     }
     return _danMuSettingButton;
 }
@@ -156,6 +165,14 @@
 - (UITextField *)danMuPlaceHolderFireTextField {
     if (!_danMuPlaceHolderFireTextField) {
         _danMuPlaceHolderFireTextField = [[UITextField alloc]init];
+//        NSAttributedString *attributedPlayceHolder = [[NSAttributedString alloc]initWithString:@"发个弹幕吧~~" attributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:14], NSFontAttributeName, [UIColor darkGrayColor], NSForegroundColorAttributeName, nil]];
+//        _danMuPlaceHolderFireTextField.attributedPlaceholder = attributedPlayceHolder;
+        _danMuPlaceHolderFireTextField.placeholder = @"发个弹幕吧~~";
+        _danMuPlaceHolderFireTextField.borderStyle = UITextBorderStyleRoundedRect;
+        _danMuPlaceHolderFireTextField.font = [UIFont systemFontOfSize:14];
+//        _danMuPlaceHolderFireTextField.textColor = [UIColor darkGrayColor];
+        _danMuPlaceHolderFireTextField.backgroundColor = [UIColor lightGrayColor];
+        _danMuPlaceHolderFireTextField.alpha = 0.8;
     }
     return _danMuPlaceHolderFireTextField;
 }
@@ -163,6 +180,7 @@
 - (UIButton *)videoQualityButton {
     if (!_videoQualityButton) {
         _videoQualityButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_videoQualityButton setTitle:@"720P" forState:UIControlStateNormal];
     }
     return _videoQualityButton;
 }
@@ -196,28 +214,32 @@
         make.height.mas_equalTo(64);
     }];
     
+    //播放暂停按钮
     [_playPauseButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.bottomContainerView.mas_left);
-        make.bottom.mas_equalTo(self.bottomContainerView.mas_bottom);
+        make.bottom.mas_equalTo(self.bottomContainerView.mas_bottom).offset(-5.f);
         
         CGFloat buttonSize = 40.f;
         make.width.mas_equalTo(buttonSize);
         make.height.mas_equalTo(buttonSize);
     }];
     
+    //当前时间+文件总时长
     [_currentAndDurationTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.playPauseButton.mas_right);
         make.centerY.mas_equalTo(self.playPauseButton.mas_centerY);
         
-        make.height.mas_equalTo(12);
+        make.width.mas_lessThanOrEqualTo(140.f);
     }];
     
+    //进度条
     [_progressSlider mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.mas_left);
         make.right.mas_equalTo(self.mas_right);
-        make.bottom.mas_equalTo(self.playPauseButton.mas_top);
+        make.bottom.mas_equalTo(self.playPauseButton.mas_top).offset(-10.f);
     }];
     
+    //亮度
     [_brightnessView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.mas_centerX);
         make.centerY.mas_equalTo(self.mas_centerY);
@@ -225,11 +247,46 @@
         make.height.mas_equalTo(44);
     }];
     
+    //音量
     [_volumeView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.mas_centerX);
         make.centerY.mas_equalTo(self.mas_centerY);
         make.width.mas_equalTo(130);
         make.height.mas_equalTo(44);
+    }];
+    
+    [_danMuOnOffButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self.playPauseButton);
+        make.left.mas_equalTo(self.currentAndDurationTimeLabel.mas_right);
+        
+        CGFloat width = 40.f;
+        make.width.mas_equalTo(width);
+        make.height.mas_equalTo(width);
+    }];
+    
+    [_danMuSettingButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self.playPauseButton);
+        make.left.mas_equalTo(self.danMuOnOffButton.mas_right);
+        
+        CGFloat width = 40.f;
+        make.width.mas_equalTo(width);
+        make.height.mas_equalTo(width);
+    }];
+    
+    [_videoQualityButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(self.mas_right);
+        make.centerY.mas_equalTo(self.playPauseButton);
+        
+        CGFloat width = 50.f;
+        make.width.mas_equalTo(width);
+        make.height.mas_equalTo(width);
+    }];
+    
+    [_danMuPlaceHolderFireTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self.playPauseButton);
+        make.left.mas_equalTo(self.danMuSettingButton.mas_right).offset(5.f);
+        make.right.mas_equalTo(self.videoQualityButton.mas_left).offset(-5.f);
+        make.height.mas_equalTo(40.f);
     }];
 }
 
